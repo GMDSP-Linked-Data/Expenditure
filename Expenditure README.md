@@ -15,6 +15,7 @@ Generic Models
 - Generic models that can be used for modelling council spend data into 'linked data' using GoogleRefine/OpenRefine.
 - Graphs of RDF.
 - RDF of generic model
+- Video tutorials
 
 Ontologies
 ----------

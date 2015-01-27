@@ -18,6 +18,8 @@ A Refine project to model Manchester expenditure data. User will need to edit se
 
 Click to open the greyed out boxes. In the bottom right section 'Use custom expression' section, click to open the 'preview/edit' box, and edit the dates using the appropriate format.
 
+Please see video tutorials for a walkthrough on how to code Council spending data into linked data, and then upload to the GMDSP datastore.
+
 Use case
 --------
 
