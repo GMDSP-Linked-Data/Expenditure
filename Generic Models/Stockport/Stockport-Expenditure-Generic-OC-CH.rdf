@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:dc="http://purl.org/dc/terms"
+	xmlns:regorg="http://www.w3.org/ns/regorg#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:interval="http://reference.data.gov.uk/def/intervals/"
+	xmlns:payment="http://reference.data.gov.uk/def/payment#"
+	xmlns:void="http://rdfs.org/ns/void#"
+	xmlns:qb="http://purl.org/linked-data/cube#"
+	xmlns:org="http://www.w3.org/ns/org#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:time="http://www.w3.org/2006/time#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+<rdf:Description rdf:about="http://data.gmdsp.org.uk/data/stockport/expenditure">
+	<rdf:type rdf:resource="http://reference.data.gov.uk/def/payment#PaymentDataset"/>
+	<rdf:type rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+	<rdfs:label xml:lang="en">Spend data for Stockport</rdfs:label>
+	<qb:structure rdf:resource="http://reference.data.gov.uk/def/payment#payments-with-expenditure-structure"/>
+	<qb:sliceKey rdf:resource="http://reference.data.gov.uk/def/payment#payment-slice"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://dbpedia.org/resource/Pound_sterling">
+	<rdfs:label xml:lang="en">Pound Sterling</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://data.gmdsp.org.uk/data/stockport/expenditure">
+	<payment:currency rdf:resource="http://dbpedia.org/resource/Pound_sterling"/>
+	<void:vocabulary>http://reference.data.gov.uk/def/payment#</void:vocabulary>
+	<termstitle xmlns="http://purl.org/dc/" xml:lang="en">Spend data for Stockport</termstitle>
+	<termsdescription xmlns="http://purl.org/dc/" xml:lang="en">Spend data for transactions over £500 for Stockport</termsdescription>
+	<foaf:page rdf:resource="http://www.trafford.gov.uk/about-your-council/data-protection/open-data/open-data.aspx"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://data.gmdsp.org.uk/data/stockport/payment/123456789">
+	<rdf:type rdf:resource="http://reference.data.gov.uk/def/payment#Payment"/>
+	<rdf:type rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+	<rdfs:label xml:lang="en">Transaction number 123456789</rdfs:label>
+	<payment:expenditureLine rdf:resource="http://data.gmdsp.org.uk/data/stockport/expenditure/YYYY-MM/expenditure-line-0"/>
+	<payment:unit rdf:resource="http://data.gmdsp.org.uk/id/stockport/payment/expense-area/department"/>
+	<qb:dataSet rdf:resource="http://data.gmdsp.org.uk/data/stockport/expenditure"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://data.gmdsp.org.uk/data/stockport/expenditure/YYYY-MM/expenditure-line-0">
+	<rdf:type rdf:resource="http://reference.data.gov.uk/def/payment#ExpenditureLine"/>
+	<rdf:type rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+	<rdfs:label xml:lang="en">Expenditure line (Month YYYY): 0</rdfs:label>
+	<payment:payment rdf:resource="http://data.gmdsp.org.uk/data/stockport/payment/123456789"/>
+	<qb:dataSet rdf:resource="http://data.gmdsp.org.uk/data/stockport/expenditure"/>
+	<payment:netAmount>500</payment:netAmount>
+	<payment:reference>123456789</payment:reference>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://opendatacommunities.org/doc/metropolitan-district-council/stockport">
+	<rdf:type rdf:resource="http://opendatacommunities.org/def/local-government/MetropolitanDistrictCouncil"/>
+	<rdf:type rdf:resource="http://www.w3.org/ns/org#FormalOrganization"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://data.gmdsp.org.uk/data/stockport/expenditure/YYYY-MM/expenditure-line-0">
+	<payment:payer rdf:resource="http://opendatacommunities.org/doc/metropolitan-district-council/stockport"/>
+	<payment:payee rdf:resource="http://data.gmdsp.org.uk/id/expenditure/supplier/supplier-name"/>
+	<payment:purchase xml:lang="en">Expenses Type</payment:purchase>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://reference.data.gov.uk/id/day/2015-01-01">
+	<rdf:type rdf:resource="http://reference.data.gov.uk/def/intervals/CalendarDay"/>
+	<rdfs:label>2015-01-01</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://reference.data.gov.uk/id/gregorian-instant/2015-01-01">
+	<rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+	<time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-01-01</time:inXSDDate>
+	<rdfs:label>2015-01-01</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://reference.data.gov.uk/id/day/2015-01-01">
+	<time:hasBeginning rdf:resource="http://reference.data.gov.uk/id/gregorian-instant/2015-01-01"/>
+	<interval:ordinalYear>2015</interval:ordinalYear>
+	<interval:ordinalMonthOfYear>01</interval:ordinalMonthOfYear>
+	<interval:ordinalDayOfMonth>01</interval:ordinalDayOfMonth>
+	<interval:intervalDuring>http://reference.data.gov.uk/id/year/2015-01-01</interval:intervalDuring>
+	<interval:intervalDuring rdf:resource="http://reference.data.gov.uk/id/month/YYYY-MM"/>
+	<interval:intervalDuring rdf:resource="http://reference.data.gov.uk/id/quarter/YYYY-Q?"/>
+	<interval:intervalDuring rdf:resource="http://reference.data.gov.uk/id/half/YYYY-H?"/>
+	<interval:intervalDuring rdf:resource="http://reference.data.gov.uk/id/government-year/YYYY-YYYY"/>
+	<termsdescription xmlns="http://purl.org/dc/" xml:lang="en">Stockport did not include specific dates for this dataset. All transactions have been assigned the first day of the month. This may affect the cube spreadsheet view.</termsdescription>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://data.gmdsp.org.uk/data/stockport/expenditure/YYYY-MM/expenditure-line-0">
+	<payment:date rdf:resource="http://reference.data.gov.uk/id/day/2015-01-01"/>
+	<payment:unit rdf:resource="http://data.gmdsp.org.uk/id/stockport/payment/expense-area/department"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://data.gmdsp.org.uk/id/stockport/payment/expense-area/department">
+	<rdf:type rdf:resource="http://www.w3.org/ns/org#OrganizationalUnit"/>
+	<rdfs:label xml:lang="en">Department</rdfs:label>
+	<org:unitOf rdf:resource="http://opendatacommunities.org/doc/metropolitan-district-council/stockport"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://data.gmdsp.org.uk/id/expenditure/supplier/supplier-name">
+	<rdf:type rdf:resource="http://www.w3.org/ns/org#Organization"/>
+	<rdfs:label xml:lang="en">Supplier Name</rdfs:label>
+</rdf:Description>
+
+</rdf:RDF>
